@@ -30,3 +30,10 @@ services:
 
 networks:
   network-php:
+    driver: bridge
+    labels:
+      fr.masamune.client: 'masamune'
+      fr.masamune.maintainer: 'masamune.code@gmail.com'
+      fr.masamune.project: 'test-curated-composed-project'
+      fr.masamune.type: 'test'
+    network_mode: 'none'
