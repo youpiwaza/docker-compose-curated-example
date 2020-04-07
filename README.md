@@ -51,7 +51,8 @@ Sources :
 # Total Score > Warn Scored -1, Pass Scored +1, Not Score (INFO) -0
 
 # Bench after having corrected steps 1 to 5
-# > Checks: 107 / Score: XXXX / XXXX WARN (host partition, auth for docker clients commands, images healthcheck false positive)
+# > Checks: 107 / Score: 54 / XXXX WARN (host partition, auth for docker clients commands, images healthcheck false positive)
+#     Also all hardware constraints, not available to docker compose in v3 (only v2 or swarm)
 
 # Original bench with a random container started, wo. flags
 # > Checks: 107 / Score 48 / ~11 WARN
