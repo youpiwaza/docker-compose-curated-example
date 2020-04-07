@@ -3,6 +3,8 @@ version: '3.7'
 services:
   web:
     cpu_shares: 1024
+    # Not available in compose files v3 for docker-compose
+    # cpu_shares: 1024
     # latest when writing
     image: nginx:1.17.6-alpine
     networks:
@@ -22,6 +24,8 @@ services:
   
   phpfpm:
     cpu_shares: 1024
+    # Not available in compose files v3 for docker-compose
+    # cpu_shares: 1024
     image: 'php:7.4.1-fpm'
     networks:
       - network-php
