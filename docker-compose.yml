@@ -27,16 +27,20 @@ services:
       - type: bind
         source: ./src
         target: /home/www
+        read_only: true
       # Override default nginx.conf to allow custom docker user
       - type: bind
         source: ./config/nginx1.17.6-alpine/etc/nginx/nginx.conf
         target: /etc/nginx/nginx.conf
+        read_only: true
       - type: bind
         source: ./config/nginx1.17.6-alpine/etc/nginx/conf.d/default.conf
         target: /etc/nginx/conf.d/default.conf
+        read_only: true
       - type: bind
         source: ./config/nginx1.17.6-alpine/etc/nginx/conf.d/site.conf
         target: /etc/nginx/conf.d/site.conf
+        read_only: true
   
   phpfpm:
     # TODO: after custom user is set
