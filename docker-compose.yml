@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
   web:
-    # cap_drop:
-    #   - ALL
+    cap_drop:
+      - ALL
     # Not available in compose files v3 for docker-compose
     # cpu_shares: 1024
     # latest when writing
