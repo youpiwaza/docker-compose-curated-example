@@ -14,6 +14,11 @@ services:
       retries: 3
       start_period: 0s
     image: nginx:1.17.6-alpine
+    labels:
+      fr.masamune.client: 'masamune'
+      fr.masamune.maintainer: 'masamune.code@gmail.com'
+      fr.masamune.project: 'curated composed nginx'
+      fr.masamune.type: 'test'
     networks:
       - network-php
     ports:
@@ -68,6 +73,11 @@ services:
       retries: 3
       start_period: 0s
     image: 'php:7.4.1-fpm'
+    labels:
+      fr.masamune.client: 'masamune'
+      fr.masamune.maintainer: 'masamune.code@gmail.com'
+      fr.masamune.project: 'curated composed php fpm'
+      fr.masamune.type: 'test'
     networks:
       - network-php
     # Allow access to port 80 for test purpose # Prefer ports > 1024 otherwise
