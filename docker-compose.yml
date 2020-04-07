@@ -16,7 +16,7 @@ services:
     sysctls:
       net.ipv4.ip_unprivileged_port_start: 0
     # Assign the_docker_peon unprivileged user
-    user: '1003:1003'
+    user: 1003:1003
     volumes:
       - type: bind
         source: ./src
