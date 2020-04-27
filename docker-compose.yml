@@ -5,6 +5,8 @@ version: '3.7'
 # Same for --pids-limit 200 nowhere to be seen on v3, available in v2
 # Same for --restart=on-failure:5
 
+# Do not go over 2 replicas per service or it keeps shutting down & restarting (network allocation error ?)
+
 services:
   web:
     cap_drop:
@@ -21,7 +23,7 @@ services:
         fr.masamune.project: 'curated service nginx'
         fr.masamune.type: 'test'
       mode: replicated
-      replicas: 3
+      replicas: 2
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -99,7 +101,7 @@ services:
         fr.masamune.project: 'curated service php fpm'
         fr.masamune.type: 'test'
       mode: replicated
-      replicas: 3
+      replicas: 2
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
