@@ -11,6 +11,7 @@ services:
       - ALL
     # cpu_shares: 1024
     ### Docker stack cure
+    #     https://docs.docker.com/compose/compose-file/#deploy
     deploy:
       # Let docker manage container's IP adresses
       endpoint_mode: vip
@@ -133,7 +134,7 @@ services:
 
 networks:
   network-php:
-    # Not compatible with docker stack (service)
+    # Bridge not compatible with docker stack (service)
     # driver: bridge
     driver: overlay
     labels:
