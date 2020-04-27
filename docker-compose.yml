@@ -22,6 +22,8 @@ services:
         fr.masamune.maintainer: 'masamune.code@gmail.com'
         fr.masamune.project: 'curated service nginx'
         fr.masamune.type: 'test'
+      # Introduced in 3.8
+      # max_replicas_per_node: 5
       mode: replicated
       replicas: 2
     healthcheck:
@@ -100,6 +102,8 @@ services:
         fr.masamune.maintainer: 'masamune.code@gmail.com'
         fr.masamune.project: 'curated service php fpm'
         fr.masamune.type: 'test'
+      # Introduced in 3.8
+      # max_replicas_per_node: 5
       mode: replicated
       replicas: 2
     healthcheck:
