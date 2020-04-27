@@ -33,6 +33,11 @@ services:
         reservations:
           cpus: '0.25'
           memory: 128M
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -120,6 +125,11 @@ services:
         reservations:
           cpus: '0.25'
           memory: 128M
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
