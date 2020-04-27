@@ -10,13 +10,17 @@ services:
     cap_drop:
       - ALL
     # cpu_shares: 1024
-    # latest when writing
+    ### Docker stack cure
+    deploy:
+      # Let docker manage container's IP adresses
+      endpoint_mode: vip
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
       timeout: 10s
       retries: 3
       start_period: 0s
+    # latest when writing
     image: nginx:1.17.6-alpine
     labels:
       fr.masamune.client: 'masamune'
@@ -77,6 +81,10 @@ services:
     #   - SYS_CHROOT
     #   - SETFCAP
     # cpu_shares: 1024
+    ### Docker stack cure
+    deploy:
+      # Let docker manage container's IP adresses
+      endpoint_mode: vip
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
