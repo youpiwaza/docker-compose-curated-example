@@ -26,6 +26,13 @@ services:
       # max_replicas_per_node: 5
       mode: replicated
       replicas: 2
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -106,6 +113,13 @@ services:
       # max_replicas_per_node: 5
       mode: replicated
       replicas: 2
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
