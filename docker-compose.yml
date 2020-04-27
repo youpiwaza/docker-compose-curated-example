@@ -38,6 +38,13 @@ services:
         delay: 5s
         max_attempts: 3
         window: 120s
+      rollback_config:
+        delay: 0s
+        failure_action: pause
+        max_failure_ratio: 0
+        monitor: 0s
+        order: stop-first
+        parallelism: 1
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -130,6 +137,13 @@ services:
         delay: 5s
         max_attempts: 3
         window: 120s
+      rollback_config:
+        delay: 0s
+        failure_action: pause
+        max_failure_ratio: 0
+        monitor: 0s
+        order: stop-first
+        parallelism: 1
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
