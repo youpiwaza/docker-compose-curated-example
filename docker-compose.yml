@@ -19,6 +19,7 @@ services:
         fr.masamune.maintainer: 'masamune.code@gmail.com'
         fr.masamune.project: 'curated service nginx'
         fr.masamune.type: 'test'
+      mode: replicated
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -95,6 +96,7 @@ services:
         fr.masamune.maintainer: 'masamune.code@gmail.com'
         fr.masamune.project: 'curated service php fpm'
         fr.masamune.type: 'test'
+      mode: replicated
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
