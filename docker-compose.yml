@@ -111,7 +111,9 @@ services:
 
 networks:
   network-php:
-    driver: bridge
+    # Not compatible with docker stack (service)
+    # driver: bridge
+    driver: overlay
     labels:
       fr.masamune.client: 'masamune'
       fr.masamune.maintainer: 'masamune.code@gmail.com'
