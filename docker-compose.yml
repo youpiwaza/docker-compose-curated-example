@@ -14,6 +14,11 @@ services:
     deploy:
       # Let docker manage container's IP adresses
       endpoint_mode: vip
+      labels:
+        fr.masamune.client: 'masamune'
+        fr.masamune.maintainer: 'masamune.code@gmail.com'
+        fr.masamune.project: 'curated service nginx'
+        fr.masamune.type: 'test'
     healthcheck:
       test: 'stat /etc/nginx/nginx.conf || exit 1'
       interval: 10s
@@ -85,6 +90,11 @@ services:
     deploy:
       # Let docker manage container's IP adresses
       endpoint_mode: vip
+      labels:
+        fr.masamune.client: 'masamune'
+        fr.masamune.maintainer: 'masamune.code@gmail.com'
+        fr.masamune.project: 'curated service php fpm'
+        fr.masamune.type: 'test'
     healthcheck:
       test: 'stat /etc/passwd || exit 1'
       interval: 10s
